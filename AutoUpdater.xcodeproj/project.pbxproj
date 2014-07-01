@@ -8,43 +8,50 @@
 
 /* Begin PBXBuildFile section */
 		C75D38EF1962A6910007B632 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = C75D38EE1962A6910007B632 /* LICENSE */; };
+		C75D392E1962C2660007B632 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7728084196252C300315C42 /* Cocoa.framework */; };
+		C75D39341962C2660007B632 /* AUAutoUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = C75D39331962C2660007B632 /* AUAutoUpdater.m */; };
+		C75D393A1962C2660007B632 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C77280A3196252C300315C42 /* XCTest.framework */; };
+		C75D393B1962C2660007B632 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7728084196252C300315C42 /* Cocoa.framework */; };
+		C75D393E1962C2660007B632 /* AutoUpdater.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C75D392D1962C2660007B632 /* AutoUpdater.dylib */; };
+		C75D39441962C2660007B632 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C75D39421962C2660007B632 /* InfoPlist.strings */; };
+		C75D39461962C2660007B632 /* AutoUpdaterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C75D39451962C2660007B632 /* AutoUpdaterTests.m */; };
+		C75D394E1962CAEE0007B632 /* AUAutoUpdater.h in Headers */ = {isa = PBXBuildFile; fileRef = C75D39321962C2660007B632 /* AUAutoUpdater.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C7728085196252C300315C42 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7728084196252C300315C42 /* Cocoa.framework */; };
 		C772808F196252C300315C42 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C772808D196252C300315C42 /* InfoPlist.strings */; };
 		C7728091196252C300315C42 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C7728090196252C300315C42 /* main.m */; };
-		C77280A4196252C300315C42 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C77280A3196252C300315C42 /* XCTest.framework */; };
-		C77280A5196252C300315C42 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7728084196252C300315C42 /* Cocoa.framework */; };
-		C77280AD196252C300315C42 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C77280AB196252C300315C42 /* InfoPlist.strings */; };
-		C77280AF196252C300315C42 /* AutoUpdaterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C77280AE196252C300315C42 /* AutoUpdaterTests.m */; };
 		C77280BA1962555B00315C42 /* AUTerminationObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = C77280B91962555B00315C42 /* AUTerminationObserver.m */; };
 		C77280BD196262B000315C42 /* AUInstaller.m in Sources */ = {isa = PBXBuildFile; fileRef = C77280BC196262B000315C42 /* AUInstaller.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		C77280A6196252C300315C42 /* PBXContainerItemProxy */ = {
+		C75D393C1962C2660007B632 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C7728079196252C300315C42 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = C7728080196252C300315C42;
+			remoteGlobalIDString = C75D392C1962C2660007B632;
 			remoteInfo = AutoUpdater;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		C75D38EE1962A6910007B632 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
+		C75D392D1962C2660007B632 /* AutoUpdater.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = AutoUpdater.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		C75D39311962C2660007B632 /* AutoUpdater-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AutoUpdater-Prefix.pch"; sourceTree = "<group>"; };
+		C75D39321962C2660007B632 /* AUAutoUpdater.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AUAutoUpdater.h; sourceTree = "<group>"; };
+		C75D39331962C2660007B632 /* AUAutoUpdater.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AUAutoUpdater.m; sourceTree = "<group>"; };
+		C75D39391962C2660007B632 /* AutoUpdaterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AutoUpdaterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C75D39411962C2660007B632 /* AutoUpdaterTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AutoUpdaterTests-Info.plist"; sourceTree = "<group>"; };
+		C75D39431962C2660007B632 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C75D39451962C2660007B632 /* AutoUpdaterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AutoUpdaterTests.m; sourceTree = "<group>"; };
 		C7728081196252C300315C42 /* AutoUpdater.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoUpdater.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7728084196252C300315C42 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		C7728087196252C300315C42 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
-		C7728088196252C300315C42 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		C7728089196252C300315C42 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C772808C196252C300315C42 /* AutoUpdater-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AutoUpdater-Info.plist"; sourceTree = "<group>"; };
 		C772808E196252C300315C42 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C7728090196252C300315C42 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C7728092196252C300315C42 /* AutoUpdater-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AutoUpdater-Prefix.pch"; sourceTree = "<group>"; };
-		C77280A2196252C300315C42 /* AutoUpdaterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AutoUpdaterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C77280A3196252C300315C42 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		C77280AA196252C300315C42 /* AutoUpdaterTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AutoUpdaterTests-Info.plist"; sourceTree = "<group>"; };
-		C77280AC196252C300315C42 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		C77280AE196252C300315C42 /* AutoUpdaterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AutoUpdaterTests.m; sourceTree = "<group>"; };
 		C77280B81962555B00315C42 /* AUTerminationObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUTerminationObserver.h; sourceTree = "<group>"; };
 		C77280B91962555B00315C42 /* AUTerminationObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUTerminationObserver.m; sourceTree = "<group>"; };
 		C77280BB196262B000315C42 /* AUInstaller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUInstaller.h; sourceTree = "<group>"; };
@@ -52,6 +59,24 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		C75D392A1962C2660007B632 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C75D392E1962C2660007B632 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C75D39361962C2660007B632 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C75D393B1962C2660007B632 /* Cocoa.framework in Frameworks */,
+				C75D393A1962C2660007B632 /* XCTest.framework in Frameworks */,
+				C75D393E1962C2660007B632 /* AutoUpdater.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C772807E196252C300315C42 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -60,23 +85,64 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C772809F196252C300315C42 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C77280A5196252C300315C42 /* Cocoa.framework in Frameworks */,
-				C77280A4196252C300315C42 /* XCTest.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C75D392F1962C2660007B632 /* AutoUpdater */ = {
+			isa = PBXGroup;
+			children = (
+				C75D39321962C2660007B632 /* AUAutoUpdater.h */,
+				C75D39331962C2660007B632 /* AUAutoUpdater.m */,
+				C75D39301962C2660007B632 /* Supporting Files */,
+			);
+			path = AutoUpdater;
+			sourceTree = "<group>";
+		};
+		C75D39301962C2660007B632 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C75D39311962C2660007B632 /* AutoUpdater-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C75D393F1962C2660007B632 /* AutoUpdaterTests */ = {
+			isa = PBXGroup;
+			children = (
+				C75D39451962C2660007B632 /* AutoUpdaterTests.m */,
+				C75D39401962C2660007B632 /* Supporting Files */,
+			);
+			path = AutoUpdaterTests;
+			sourceTree = "<group>";
+		};
+		C75D39401962C2660007B632 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C75D39411962C2660007B632 /* AutoUpdaterTests-Info.plist */,
+				C75D39421962C2660007B632 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C75D394D1962C2890007B632 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				C7728090196252C300315C42 /* main.m */,
+				C77280B81962555B00315C42 /* AUTerminationObserver.h */,
+				C77280B91962555B00315C42 /* AUTerminationObserver.m */,
+				C77280BB196262B000315C42 /* AUInstaller.h */,
+				C77280BC196262B000315C42 /* AUInstaller.m */,
+				C772808B196252C300315C42 /* Supporting Files */,
+			);
+			name = Application;
+			sourceTree = "<group>";
+		};
 		C7728078196252C300315C42 = {
 			isa = PBXGroup;
 			children = (
 				C772808A196252C300315C42 /* AutoUpdater */,
-				C77280A8196252C300315C42 /* AutoUpdaterTests */,
+				C75D392F1962C2660007B632 /* AutoUpdater */,
+				C75D393F1962C2660007B632 /* AutoUpdaterTests */,
 				C7728083196252C300315C42 /* Frameworks */,
 				C7728082196252C300315C42 /* Products */,
 			);
@@ -86,7 +152,8 @@
 			isa = PBXGroup;
 			children = (
 				C7728081196252C300315C42 /* AutoUpdater.app */,
-				C77280A2196252C300315C42 /* AutoUpdaterTests.xctest */,
+				C75D392D1962C2660007B632 /* AutoUpdater.dylib */,
+				C75D39391962C2660007B632 /* AutoUpdaterTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -105,7 +172,6 @@
 			isa = PBXGroup;
 			children = (
 				C7728087196252C300315C42 /* AppKit.framework */,
-				C7728088196252C300315C42 /* CoreData.framework */,
 				C7728089196252C300315C42 /* Foundation.framework */,
 			);
 			name = "Other Frameworks";
@@ -114,12 +180,7 @@
 		C772808A196252C300315C42 /* AutoUpdater */ = {
 			isa = PBXGroup;
 			children = (
-				C772808B196252C300315C42 /* Supporting Files */,
-				C77280B81962555B00315C42 /* AUTerminationObserver.h */,
-				C77280B91962555B00315C42 /* AUTerminationObserver.m */,
-				C77280BB196262B000315C42 /* AUInstaller.h */,
-				C77280BC196262B000315C42 /* AUInstaller.m */,
-				C7728090196252C300315C42 /* main.m */,
+				C75D394D1962C2890007B632 /* Application */,
 			);
 			path = AutoUpdater;
 			sourceTree = "<group>";
@@ -135,30 +196,58 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		C77280A8196252C300315C42 /* AutoUpdaterTests */ = {
-			isa = PBXGroup;
-			children = (
-				C77280AE196252C300315C42 /* AutoUpdaterTests.m */,
-				C77280A9196252C300315C42 /* Supporting Files */,
-			);
-			path = AutoUpdaterTests;
-			sourceTree = "<group>";
-		};
-		C77280A9196252C300315C42 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				C77280AA196252C300315C42 /* AutoUpdaterTests-Info.plist */,
-				C77280AB196252C300315C42 /* InfoPlist.strings */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		C75D392B1962C2660007B632 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C75D394E1962CAEE0007B632 /* AUAutoUpdater.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
-		C7728080196252C300315C42 /* AutoUpdater */ = {
+		C75D392C1962C2660007B632 /* AutoUpdater */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C77280B2196252C300315C42 /* Build configuration list for PBXNativeTarget "AutoUpdater" */;
+			buildConfigurationList = C75D39471962C2670007B632 /* Build configuration list for PBXNativeTarget "AutoUpdater" */;
+			buildPhases = (
+				C75D39291962C2660007B632 /* Sources */,
+				C75D392A1962C2660007B632 /* Frameworks */,
+				C75D392B1962C2660007B632 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AutoUpdater;
+			productName = AutoUpdater;
+			productReference = C75D392D1962C2660007B632 /* AutoUpdater.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+		C75D39381962C2660007B632 /* AutoUpdaterTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C75D394A1962C2670007B632 /* Build configuration list for PBXNativeTarget "AutoUpdaterTests" */;
+			buildPhases = (
+				C75D39351962C2660007B632 /* Sources */,
+				C75D39361962C2660007B632 /* Frameworks */,
+				C75D39371962C2660007B632 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C75D393D1962C2660007B632 /* PBXTargetDependency */,
+			);
+			name = AutoUpdaterTests;
+			productName = AutoUpdaterTests;
+			productReference = C75D39391962C2660007B632 /* AutoUpdaterTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C7728080196252C300315C42 /* AutoUpdater.app */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C77280B2196252C300315C42 /* Build configuration list for PBXNativeTarget "AutoUpdater.app" */;
 			buildPhases = (
 				C772807D196252C300315C42 /* Sources */,
 				C772807E196252C300315C42 /* Frameworks */,
@@ -169,28 +258,10 @@
 			);
 			dependencies = (
 			);
-			name = AutoUpdater;
+			name = AutoUpdater.app;
 			productName = AutoUpdater;
 			productReference = C7728081196252C300315C42 /* AutoUpdater.app */;
 			productType = "com.apple.product-type.application";
-		};
-		C77280A1196252C300315C42 /* AutoUpdaterTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = C77280B5196252C300315C42 /* Build configuration list for PBXNativeTarget "AutoUpdaterTests" */;
-			buildPhases = (
-				C772809E196252C300315C42 /* Sources */,
-				C772809F196252C300315C42 /* Frameworks */,
-				C77280A0196252C300315C42 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				C77280A7196252C300315C42 /* PBXTargetDependency */,
-			);
-			name = AutoUpdaterTests;
-			productName = AutoUpdaterTests;
-			productReference = C77280A2196252C300315C42 /* AutoUpdaterTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -202,8 +273,8 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = maaash.jp;
 				TargetAttributes = {
-					C77280A1196252C300315C42 = {
-						TestTargetID = C7728080196252C300315C42;
+					C75D39381962C2660007B632 = {
+						TestTargetID = C75D392C1962C2660007B632;
 					};
 				};
 			};
@@ -220,27 +291,28 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C7728080196252C300315C42 /* AutoUpdater */,
-				C77280A1196252C300315C42 /* AutoUpdaterTests */,
+				C7728080196252C300315C42 /* AutoUpdater.app */,
+				C75D392C1962C2660007B632 /* AutoUpdater */,
+				C75D39381962C2660007B632 /* AutoUpdaterTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		C75D39371962C2660007B632 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C75D39441962C2660007B632 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C772807F196252C300315C42 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				C75D38EF1962A6910007B632 /* LICENSE in Resources */,
 				C772808F196252C300315C42 /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C77280A0196252C300315C42 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C77280AD196252C300315C42 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,6 +335,22 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		C75D39291962C2660007B632 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C75D39341962C2660007B632 /* AUAutoUpdater.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C75D39351962C2660007B632 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C75D39461962C2660007B632 /* AutoUpdaterTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C772807D196252C300315C42 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -273,25 +361,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C772809E196252C300315C42 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C77280AF196252C300315C42 /* AutoUpdaterTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		C77280A7196252C300315C42 /* PBXTargetDependency */ = {
+		C75D393D1962C2660007B632 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = C7728080196252C300315C42 /* AutoUpdater */;
-			targetProxy = C77280A6196252C300315C42 /* PBXContainerItemProxy */;
+			target = C75D392C1962C2660007B632 /* AutoUpdater */;
+			targetProxy = C75D393C1962C2660007B632 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		C75D39421962C2660007B632 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C75D39431962C2660007B632 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		C772808D196252C300315C42 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -300,17 +388,79 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		C77280AB196252C300315C42 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C77280AC196252C300315C42 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		C75D39481962C2670007B632 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AutoUpdater/AutoUpdater-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		C75D39491962C2670007B632 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AutoUpdater/AutoUpdater-Prefix.pch";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		C75D394B1962C2670007B632 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/AutoUpdater.dylib";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AutoUpdater/AutoUpdater-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "AutoUpdaterTests/AutoUpdaterTests-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		C75D394C1962C2670007B632 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/AutoUpdater.dylib";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AutoUpdater/AutoUpdater-Prefix.pch";
+				INFOPLIST_FILE = "AutoUpdaterTests/AutoUpdaterTests-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
 		C77280B0196252C300315C42 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -389,7 +539,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AutoUpdater/AutoUpdater-Prefix.pch";
 				INFOPLIST_FILE = "AutoUpdater/AutoUpdater-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = AutoUpdater;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -402,54 +552,30 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AutoUpdater/AutoUpdater-Prefix.pch";
 				INFOPLIST_FILE = "AutoUpdater/AutoUpdater-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = AutoUpdater;
 				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
-		C77280B6196252C300315C42 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/AutoUpdater.app/Contents/MacOS/AutoUpdater";
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(inherited)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "AutoUpdater/AutoUpdater-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "AutoUpdaterTests/AutoUpdaterTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		C77280B7196252C300315C42 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/AutoUpdater.app/Contents/MacOS/AutoUpdater";
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(inherited)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "AutoUpdater/AutoUpdater-Prefix.pch";
-				INFOPLIST_FILE = "AutoUpdaterTests/AutoUpdaterTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		C75D39471962C2670007B632 /* Build configuration list for PBXNativeTarget "AutoUpdater" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C75D39481962C2670007B632 /* Debug */,
+				C75D39491962C2670007B632 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C75D394A1962C2670007B632 /* Build configuration list for PBXNativeTarget "AutoUpdaterTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C75D394B1962C2670007B632 /* Debug */,
+				C75D394C1962C2670007B632 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		C772807C196252C300315C42 /* Build configuration list for PBXProject "AutoUpdater" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -459,20 +585,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C77280B2196252C300315C42 /* Build configuration list for PBXNativeTarget "AutoUpdater" */ = {
+		C77280B2196252C300315C42 /* Build configuration list for PBXNativeTarget "AutoUpdater.app" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C77280B3196252C300315C42 /* Debug */,
 				C77280B4196252C300315C42 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		C77280B5196252C300315C42 /* Build configuration list for PBXNativeTarget "AutoUpdaterTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				C77280B6196252C300315C42 /* Debug */,
-				C77280B7196252C300315C42 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

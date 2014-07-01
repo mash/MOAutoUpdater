@@ -9,9 +9,6 @@
 #import "AUTerminationObserver.h"
 
 NSString * const AUErrorDomain = @"AUErrorDomain";
-typedef NS_ENUM (NSInteger, AUErrorCode) {
-    AUErrorCodeTimeout
-};
 
 static const NSTimeInterval kAUTerminationPollingInterval = 0.5;
 

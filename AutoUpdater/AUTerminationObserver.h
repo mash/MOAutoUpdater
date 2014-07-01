@@ -8,6 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+extern NSString * const AUErrorDomain;
+typedef NS_ENUM (NSInteger, AUErrorCode) {
+    AUErrorCodeTimeout
+};
+
 @interface AUTerminationObserver : NSObject
 
 @property (nonatomic) NSTimeInterval timeout;
