@@ -10,13 +10,13 @@
 
 @interface AUAutoUpdater ()
 
-@property (nonatomic) NSString *sourcePath;
+@property (nonatomic) NSURL *sourcePath;
 
 @end
 
 @implementation AUAutoUpdater
 
-- (instancetype) initWithSourcePath:(NSString*)source {
+- (instancetype) initWithSourcePath:(NSURL*)source {
     self = [super init];
     if (!self) { return nil; }
 
@@ -31,7 +31,7 @@
     [NSTask launchedTaskWithLaunchPath: updaterApp
                              arguments: @[ [NSBundle mainBundle].bundleIdentifier,
                                            bundlePath,
-                                           _sourcePath ]];
+                                           [_sourcePath path] ]];
 }
 
 @end

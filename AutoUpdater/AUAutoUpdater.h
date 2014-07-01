@@ -10,7 +10,7 @@
 
 @interface AUAutoUpdater : NSObject
 
-- (instancetype) initWithSourcePath:(NSString*)source;
+- (instancetype) initWithSourcePath:(NSURL*)source;
 - (void) run;
 
 @end

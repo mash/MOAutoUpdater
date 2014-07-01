@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0EF9D8F6AB9E4322A3617FFB /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC16B4057084455AF54C4A5 /* libPods.a */; };
+		4D24CE881A254B3AA40326FD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC16B4057084455AF54C4A5 /* libPods.a */; };
 		C75D38EF1962A6910007B632 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = C75D38EE1962A6910007B632 /* LICENSE */; };
 		C75D392E1962C2660007B632 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7728084196252C300315C42 /* Cocoa.framework */; };
 		C75D39341962C2660007B632 /* AUAutoUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = C75D39331962C2660007B632 /* AUAutoUpdater.m */; };
@@ -16,6 +18,10 @@
 		C75D39441962C2660007B632 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C75D39421962C2660007B632 /* InfoPlist.strings */; };
 		C75D39461962C2660007B632 /* AutoUpdaterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C75D39451962C2660007B632 /* AutoUpdaterTests.m */; };
 		C75D394E1962CAEE0007B632 /* AUAutoUpdater.h in Headers */ = {isa = PBXBuildFile; fileRef = C75D39321962C2660007B632 /* AUAutoUpdater.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C75D39511962CDAA0007B632 /* AUGithubReleaseChecker.h in Headers */ = {isa = PBXBuildFile; fileRef = C75D394F1962CDAA0007B632 /* AUGithubReleaseChecker.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C75D39521962CDAA0007B632 /* AUGithubReleaseChecker.m in Sources */ = {isa = PBXBuildFile; fileRef = C75D39501962CDAA0007B632 /* AUGithubReleaseChecker.m */; };
+		C75D39551962CF260007B632 /* AULog.h in Headers */ = {isa = PBXBuildFile; fileRef = C75D39531962CF260007B632 /* AULog.h */; };
+		C75D39561962CF260007B632 /* AULog.m in Sources */ = {isa = PBXBuildFile; fileRef = C75D39541962CF260007B632 /* AULog.m */; };
 		C7728085196252C300315C42 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7728084196252C300315C42 /* Cocoa.framework */; };
 		C772808F196252C300315C42 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C772808D196252C300315C42 /* InfoPlist.strings */; };
 		C7728091196252C300315C42 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C7728090196252C300315C42 /* main.m */; };
@@ -34,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5DC16B4057084455AF54C4A5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		76DE2237E09D44ABB3011E82 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		C75D38EE1962A6910007B632 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
 		C75D392D1962C2660007B632 /* AutoUpdater.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = AutoUpdater.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		C75D39311962C2660007B632 /* AutoUpdater-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AutoUpdater-Prefix.pch"; sourceTree = "<group>"; };
@@ -43,6 +51,10 @@
 		C75D39411962C2660007B632 /* AutoUpdaterTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AutoUpdaterTests-Info.plist"; sourceTree = "<group>"; };
 		C75D39431962C2660007B632 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C75D39451962C2660007B632 /* AutoUpdaterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AutoUpdaterTests.m; sourceTree = "<group>"; };
+		C75D394F1962CDAA0007B632 /* AUGithubReleaseChecker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUGithubReleaseChecker.h; sourceTree = "<group>"; };
+		C75D39501962CDAA0007B632 /* AUGithubReleaseChecker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUGithubReleaseChecker.m; sourceTree = "<group>"; };
+		C75D39531962CF260007B632 /* AULog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AULog.h; sourceTree = "<group>"; };
+		C75D39541962CF260007B632 /* AULog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AULog.m; sourceTree = "<group>"; };
 		C7728081196252C300315C42 /* AutoUpdater.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoUpdater.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7728084196252C300315C42 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		C7728087196252C300315C42 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -64,6 +76,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C75D392E1962C2660007B632 /* Cocoa.framework in Frameworks */,
+				4D24CE881A254B3AA40326FD /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,22 +95,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7728085196252C300315C42 /* Cocoa.framework in Frameworks */,
+				0EF9D8F6AB9E4322A3617FFB /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		C75D392F1962C2660007B632 /* AutoUpdater */ = {
-			isa = PBXGroup;
-			children = (
-				C75D39321962C2660007B632 /* AUAutoUpdater.h */,
-				C75D39331962C2660007B632 /* AUAutoUpdater.m */,
-				C75D39301962C2660007B632 /* Supporting Files */,
-			);
-			path = AutoUpdater;
-			sourceTree = "<group>";
-		};
 		C75D39301962C2660007B632 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -141,10 +145,10 @@
 			isa = PBXGroup;
 			children = (
 				C772808A196252C300315C42 /* AutoUpdater */,
-				C75D392F1962C2660007B632 /* AutoUpdater */,
 				C75D393F1962C2660007B632 /* AutoUpdaterTests */,
 				C7728083196252C300315C42 /* Frameworks */,
 				C7728082196252C300315C42 /* Products */,
+				76DE2237E09D44ABB3011E82 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -164,6 +168,7 @@
 				C7728084196252C300315C42 /* Cocoa.framework */,
 				C77280A3196252C300315C42 /* XCTest.framework */,
 				C7728086196252C300315C42 /* Other Frameworks */,
+				5DC16B4057084455AF54C4A5 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -180,6 +185,13 @@
 		C772808A196252C300315C42 /* AutoUpdater */ = {
 			isa = PBXGroup;
 			children = (
+				C75D39531962CF260007B632 /* AULog.h */,
+				C75D39541962CF260007B632 /* AULog.m */,
+				C75D394F1962CDAA0007B632 /* AUGithubReleaseChecker.h */,
+				C75D39501962CDAA0007B632 /* AUGithubReleaseChecker.m */,
+				C75D39321962C2660007B632 /* AUAutoUpdater.h */,
+				C75D39331962C2660007B632 /* AUAutoUpdater.m */,
+				C75D39301962C2660007B632 /* Supporting Files */,
 				C75D394D1962C2890007B632 /* Application */,
 			);
 			path = AutoUpdater;
@@ -203,6 +215,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C75D39551962CF260007B632 /* AULog.h in Headers */,
+				C75D39511962CDAA0007B632 /* AUGithubReleaseChecker.h in Headers */,
 				C75D394E1962CAEE0007B632 /* AUAutoUpdater.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -214,9 +228,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C75D39471962C2670007B632 /* Build configuration list for PBXNativeTarget "AutoUpdater" */;
 			buildPhases = (
+				82BE3EFCC02E455A94438BF5 /* Check Pods Manifest.lock */,
 				C75D39291962C2660007B632 /* Sources */,
 				C75D392A1962C2660007B632 /* Frameworks */,
 				C75D392B1962C2660007B632 /* Headers */,
+				F67C84DDC8A64720815CF457 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -249,10 +265,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C77280B2196252C300315C42 /* Build configuration list for PBXNativeTarget "AutoUpdater.app" */;
 			buildPhases = (
+				1DA81D6CB6704384A70B67BD /* Check Pods Manifest.lock */,
 				C772807D196252C300315C42 /* Sources */,
 				C772807E196252C300315C42 /* Frameworks */,
 				C772807F196252C300315C42 /* Resources */,
 				C75D39041962BA840007B632 /* ShellScript */,
+				6E327464B76D4D6DB1375DB3 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -319,6 +337,51 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1DA81D6CB6704384A70B67BD /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6E327464B76D4D6DB1375DB3 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		82BE3EFCC02E455A94438BF5 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		C75D39041962BA840007B632 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -332,6 +395,21 @@
 			shellPath = /bin/sh;
 			shellScript = "if [ test -d \"${SRCROOT}/Products/${FULL_PRODUCT_NAME}\" ]; then\n  rm -r \"${SRCROOT}/Products/${FULL_PRODUCT_NAME}\"\nfi\ncp -R \"${BUILT_PRODUCTS_DIR}/${FULL_PRODUCT_NAME}\" \"${SRCROOT}/Products/\"\n";
 		};
+		F67C84DDC8A64720815CF457 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -339,6 +417,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C75D39561962CF260007B632 /* AULog.m in Sources */,
+				C75D39521962CDAA0007B632 /* AUGithubReleaseChecker.m in Sources */,
 				C75D39341962C2660007B632 /* AUAutoUpdater.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -393,6 +473,7 @@
 /* Begin XCBuildConfiguration section */
 		C75D39481962C2670007B632 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 76DE2237E09D44ABB3011E82 /* Pods.xcconfig */;
 			buildSettings = {
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -409,6 +490,7 @@
 		};
 		C75D39491962C2670007B632 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 76DE2237E09D44ABB3011E82 /* Pods.xcconfig */;
 			buildSettings = {
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -533,6 +615,7 @@
 		};
 		C77280B3196252C300315C42 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 76DE2237E09D44ABB3011E82 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -546,6 +629,7 @@
 		};
 		C77280B4196252C300315C42 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 76DE2237E09D44ABB3011E82 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -567,6 +651,7 @@
 				C75D39491962C2670007B632 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C75D394A1962C2670007B632 /* Build configuration list for PBXNativeTarget "AutoUpdaterTests" */ = {
 			isa = XCConfigurationList;
@@ -575,6 +660,7 @@
 				C75D394C1962C2670007B632 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C772807C196252C300315C42 /* Build configuration list for PBXProject "AutoUpdater" */ = {
 			isa = XCConfigurationList;
