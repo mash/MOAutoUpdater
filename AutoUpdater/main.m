@@ -43,7 +43,7 @@ int main(int argc, const char * argv[]){
                                                                        sourcePath: source];
             [installer installWithCompletion:^(NSError* error) {
                     if (error) {
-                        NSString *message = [NSString stringWithFormat: @"Failed to install update of %@", appname];
+                        NSString *message = [NSString stringWithFormat: @"Failed to install update of %@, error: %@", appname, error];
                         NSLog( @"%@", message );
                         showModalAlertWithMessage(message);
                         exit(EXIT_FAILURE);

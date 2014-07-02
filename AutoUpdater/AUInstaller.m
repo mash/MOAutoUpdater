@@ -40,7 +40,6 @@
                                                                 resultingItemURL: &destinationURL
                                                                            error: &error];
         if (!success) {
-            // TODO error handling
             dispatch_async(dispatch_get_main_queue(), ^{
                     completion( error );
                 });
