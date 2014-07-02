@@ -10,4 +10,12 @@
 
 @implementation AUArchiveFetcher
 
++ (NSURL*)archiveCacheDirectory {
+    NSArray *urls = [[NSFileManager defaultManager] URLsForDirectory: NSCachesDirectory inDomains: NSUserDomainMask];
+    NSURL *ret    = urls[ 0 ];
+
+    return [[ret URLByAppendingPathComponent: [NSBundle mainBundle].bundleIdentifier]
+            URLByAppendingPathComponent: @"AutoUpdater"];
+}
+
 @end

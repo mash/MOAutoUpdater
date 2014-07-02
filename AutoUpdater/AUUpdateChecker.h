@@ -15,6 +15,8 @@ extern NSString * const kAUReleaseInformationBodyTextKey;
 
 @interface AUUpdateChecker : NSObject
 
+@property (nonatomic) NSURL *cacheDirectory;
+
 - (instancetype) initWithFetcher:(id<AUArchiveFetcher>)fetcher
                       unarchiver:(id<AUUnarchiver>)unarchiver
                       validators:(NSArray*)validators;

@@ -29,9 +29,10 @@ NSString * const kAUReleaseInformationBodyTextKey   = @"body";
     self = [super init];
     if (!self) { return nil; }
 
-    _fetcher    = fetcher;
-    _unarchiver = unarchiver;
-    _validators = validators;
+    _fetcher        = fetcher;
+    _unarchiver     = unarchiver;
+    _validators     = validators;
+    _cacheDirectory = [AUArchiveFetcher archiveCacheDirectory];
 
     return self;
 }
@@ -39,10 +40,8 @@ NSString * const kAUReleaseInformationBodyTextKey   = @"body";
 - (void)checkForVersionNewerThanVersion:(NSString*)currentVersion
                  foundNewerVersionBlock:(void (^)(NSDictionary *releaseInformation, NSURL *unarchivedPath, NSError *error))completion {
 
-    NSArray *urls = [[NSFileManager defaultManager] URLsForDirectory: NSCachesDirectory inDomains: NSUserDomainMask];
-
     [_fetcher fetchArchiveNewerThanVersion: currentVersion
-                         downloadDirectory: urls[ 0 ]
+                         downloadDirectory: _cacheDirectory
                   fetchedNewerArchiveBlock:^(NSDictionary *releaseInformation, NSURL *downloadedArchive, NSError *error) {
 
         AULOG( @"releaseInformation: %@, downloadedArchive: %@, error: %@", releaseInformation, downloadedArchive, error );

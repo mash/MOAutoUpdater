@@ -30,7 +30,7 @@ NSString * const AUReleaseCheckerErrorDomain = @"AUReleaseCheckerErrorDomain";
 }
 
 - (void)fetchArchiveNewerThanVersion:(NSString*)currentVersion
-                   downloadDirectory:(NSString*)downloadDirectory
+                   downloadDirectory:(NSURL*)downloadDirectory
             fetchedNewerArchiveBlock:(void (^)(NSDictionary *releaseInformation, NSURL *downloadedArchive, NSError *error))completion {
     AULOG( @"currentVersion: %@", currentVersion );
 
@@ -79,7 +79,7 @@ NSString * const AUReleaseCheckerErrorDomain = @"AUReleaseCheckerErrorDomain";
 
         NSString *newestVersion  = release[ @"tag_name" ];
         NSNumber *assetID        = release[ @"assets" ][ 0 ][ @"id" ];
-        NSURL *downloadFileURL   = [NSURL fileURLWithPathComponents: @[downloadDirectory, [NSString stringWithFormat: @"%@", assetID]]];
+        NSURL *downloadFileURL   = [downloadDirectory URLByAppendingPathComponent: assetID.stringValue];
 
         NSDictionary *releaseInformation = @{
             kAUReleaseInformationNewVersionKey: release[@"name"],

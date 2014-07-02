@@ -13,11 +13,13 @@
 /// foundNewerVersionBlock is called only when we found a version newer than currentVersion,
 /// and will be called in background.
 - (void)fetchArchiveNewerThanVersion:(NSString*)currentVersion
-                   downloadDirectory:(NSString*)downloadDirectory
+                   downloadDirectory:(NSURL*)downloadDirectory
             fetchedNewerArchiveBlock:(void (^)(NSDictionary *releaseInformation, NSURL *downloadedArchive, NSError *error))completion;
 
 @end
 
 @interface AUArchiveFetcher : NSObject
+
++ (NSURL*)archiveCacheDirectory;
 
 @end
