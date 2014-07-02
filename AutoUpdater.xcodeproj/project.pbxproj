@@ -10,26 +10,30 @@
 		4D24CE881A254B3AA40326FD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC16B4057084455AF54C4A5 /* libPods.a */; };
 		C75D38EF1962A6910007B632 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = C75D38EE1962A6910007B632 /* LICENSE */; };
 		C75D392E1962C2660007B632 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7728084196252C300315C42 /* Cocoa.framework */; };
-		C75D39341962C2660007B632 /* AUAutoUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = C75D39331962C2660007B632 /* AUAutoUpdater.m */; };
+		C75D39341962C2660007B632 /* AUUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = C75D39331962C2660007B632 /* AUUpdater.m */; };
 		C75D393A1962C2660007B632 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C77280A3196252C300315C42 /* XCTest.framework */; };
 		C75D393B1962C2660007B632 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7728084196252C300315C42 /* Cocoa.framework */; };
 		C75D393E1962C2660007B632 /* AutoUpdater.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C75D392D1962C2660007B632 /* AutoUpdater.dylib */; };
 		C75D39441962C2660007B632 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C75D39421962C2660007B632 /* InfoPlist.strings */; };
 		C75D39461962C2660007B632 /* AutoUpdaterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C75D39451962C2660007B632 /* AutoUpdaterTests.m */; };
-		C75D394E1962CAEE0007B632 /* AUAutoUpdater.h in Headers */ = {isa = PBXBuildFile; fileRef = C75D39321962C2660007B632 /* AUAutoUpdater.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C75D39511962CDAA0007B632 /* AUGithubReleaseChecker.h in Headers */ = {isa = PBXBuildFile; fileRef = C75D394F1962CDAA0007B632 /* AUGithubReleaseChecker.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C75D39521962CDAA0007B632 /* AUGithubReleaseChecker.m in Sources */ = {isa = PBXBuildFile; fileRef = C75D39501962CDAA0007B632 /* AUGithubReleaseChecker.m */; };
+		C75D394E1962CAEE0007B632 /* AUUpdater.h in Headers */ = {isa = PBXBuildFile; fileRef = C75D39321962C2660007B632 /* AUUpdater.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C75D39511962CDAA0007B632 /* AUGithubReleaseFetcher.h in Headers */ = {isa = PBXBuildFile; fileRef = C75D394F1962CDAA0007B632 /* AUGithubReleaseFetcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C75D39521962CDAA0007B632 /* AUGithubReleaseFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = C75D39501962CDAA0007B632 /* AUGithubReleaseFetcher.m */; };
 		C75D39551962CF260007B632 /* AULog.h in Headers */ = {isa = PBXBuildFile; fileRef = C75D39531962CF260007B632 /* AULog.h */; };
 		C75D39561962CF260007B632 /* AULog.m in Sources */ = {isa = PBXBuildFile; fileRef = C75D39541962CF260007B632 /* AULog.m */; };
 		C75D395B196300920007B632 /* AUZipUnarchiver.h in Headers */ = {isa = PBXBuildFile; fileRef = C75D3959196300920007B632 /* AUZipUnarchiver.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C75D395C196300920007B632 /* AUZipUnarchiver.m in Sources */ = {isa = PBXBuildFile; fileRef = C75D395A196300920007B632 /* AUZipUnarchiver.m */; };
-		C75D395D196300CE0007B632 /* AUUnarchiver.h in Headers */ = {isa = PBXBuildFile; fileRef = C75D39581963004B0007B632 /* AUUnarchiver.h */; };
+		C75D395D196300CE0007B632 /* AUUnarchiver.h in Headers */ = {isa = PBXBuildFile; fileRef = C75D39581963004B0007B632 /* AUUnarchiver.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C75D395F196306700007B632 /* AUUnarchiver.m in Sources */ = {isa = PBXBuildFile; fileRef = C75D395E196306700007B632 /* AUUnarchiver.m */; };
 		C7728085196252C300315C42 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7728084196252C300315C42 /* Cocoa.framework */; };
 		C772808F196252C300315C42 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C772808D196252C300315C42 /* InfoPlist.strings */; };
 		C7728091196252C300315C42 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C7728090196252C300315C42 /* main.m */; };
 		C77280BA1962555B00315C42 /* AUTerminationObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = C77280B91962555B00315C42 /* AUTerminationObserver.m */; };
 		C77280BD196262B000315C42 /* AUInstaller.m in Sources */ = {isa = PBXBuildFile; fileRef = C77280BC196262B000315C42 /* AUInstaller.m */; };
+		C7DD58181963A95C0014311D /* AUUpdateChecker.h in Headers */ = {isa = PBXBuildFile; fileRef = C7DD58161963A95C0014311D /* AUUpdateChecker.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C7DD58191963A95C0014311D /* AUUpdateChecker.m in Sources */ = {isa = PBXBuildFile; fileRef = C7DD58171963A95C0014311D /* AUUpdateChecker.m */; };
+		C7DD581C1963A99C0014311D /* AUArchiveFetcher.h in Headers */ = {isa = PBXBuildFile; fileRef = C7DD581A1963A99C0014311D /* AUArchiveFetcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C7DD581D1963A99C0014311D /* AUArchiveFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = C7DD581B1963A99C0014311D /* AUArchiveFetcher.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,14 +52,14 @@
 		C75D38EE1962A6910007B632 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
 		C75D392D1962C2660007B632 /* AutoUpdater.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = AutoUpdater.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		C75D39311962C2660007B632 /* AutoUpdater-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AutoUpdater-Prefix.pch"; sourceTree = "<group>"; };
-		C75D39321962C2660007B632 /* AUAutoUpdater.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AUAutoUpdater.h; sourceTree = "<group>"; };
-		C75D39331962C2660007B632 /* AUAutoUpdater.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AUAutoUpdater.m; sourceTree = "<group>"; };
+		C75D39321962C2660007B632 /* AUUpdater.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AUUpdater.h; sourceTree = "<group>"; };
+		C75D39331962C2660007B632 /* AUUpdater.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AUUpdater.m; sourceTree = "<group>"; };
 		C75D39391962C2660007B632 /* AutoUpdaterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AutoUpdaterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C75D39411962C2660007B632 /* AutoUpdaterTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AutoUpdaterTests-Info.plist"; sourceTree = "<group>"; };
 		C75D39431962C2660007B632 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C75D39451962C2660007B632 /* AutoUpdaterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AutoUpdaterTests.m; sourceTree = "<group>"; };
-		C75D394F1962CDAA0007B632 /* AUGithubReleaseChecker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUGithubReleaseChecker.h; sourceTree = "<group>"; };
-		C75D39501962CDAA0007B632 /* AUGithubReleaseChecker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUGithubReleaseChecker.m; sourceTree = "<group>"; };
+		C75D394F1962CDAA0007B632 /* AUGithubReleaseFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUGithubReleaseFetcher.h; sourceTree = "<group>"; };
+		C75D39501962CDAA0007B632 /* AUGithubReleaseFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUGithubReleaseFetcher.m; sourceTree = "<group>"; };
 		C75D39531962CF260007B632 /* AULog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AULog.h; sourceTree = "<group>"; };
 		C75D39541962CF260007B632 /* AULog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AULog.m; sourceTree = "<group>"; };
 		C75D39581963004B0007B632 /* AUUnarchiver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AUUnarchiver.h; sourceTree = "<group>"; };
@@ -75,6 +79,10 @@
 		C77280B91962555B00315C42 /* AUTerminationObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUTerminationObserver.m; sourceTree = "<group>"; };
 		C77280BB196262B000315C42 /* AUInstaller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUInstaller.h; sourceTree = "<group>"; };
 		C77280BC196262B000315C42 /* AUInstaller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUInstaller.m; sourceTree = "<group>"; };
+		C7DD58161963A95C0014311D /* AUUpdateChecker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUUpdateChecker.h; sourceTree = "<group>"; };
+		C7DD58171963A95C0014311D /* AUUpdateChecker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUUpdateChecker.m; sourceTree = "<group>"; };
+		C7DD581A1963A99C0014311D /* AUArchiveFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUArchiveFetcher.h; sourceTree = "<group>"; };
+		C7DD581B1963A99C0014311D /* AUArchiveFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUArchiveFetcher.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,13 +168,15 @@
 			name = Unarchivers;
 			sourceTree = "<group>";
 		};
-		C75D396019630C0B0007B632 /* VersionCheckers */ = {
+		C75D396019630C0B0007B632 /* Fetchers */ = {
 			isa = PBXGroup;
 			children = (
-				C75D394F1962CDAA0007B632 /* AUGithubReleaseChecker.h */,
-				C75D39501962CDAA0007B632 /* AUGithubReleaseChecker.m */,
+				C7DD581A1963A99C0014311D /* AUArchiveFetcher.h */,
+				C7DD581B1963A99C0014311D /* AUArchiveFetcher.m */,
+				C75D394F1962CDAA0007B632 /* AUGithubReleaseFetcher.h */,
+				C75D39501962CDAA0007B632 /* AUGithubReleaseFetcher.m */,
 			);
-			name = VersionCheckers;
+			name = Fetchers;
 			sourceTree = "<group>";
 		};
 		C7728078196252C300315C42 = {
@@ -215,10 +225,12 @@
 			children = (
 				C75D394D1962C2890007B632 /* Application */,
 				C75D39301962C2660007B632 /* Supporting Files */,
-				C75D396019630C0B0007B632 /* VersionCheckers */,
+				C75D396019630C0B0007B632 /* Fetchers */,
 				C75D3957196300350007B632 /* Unarchivers */,
-				C75D39321962C2660007B632 /* AUAutoUpdater.h */,
-				C75D39331962C2660007B632 /* AUAutoUpdater.m */,
+				C75D39321962C2660007B632 /* AUUpdater.h */,
+				C75D39331962C2660007B632 /* AUUpdater.m */,
+				C7DD58161963A95C0014311D /* AUUpdateChecker.h */,
+				C7DD58171963A95C0014311D /* AUUpdateChecker.m */,
 			);
 			path = AutoUpdater;
 			sourceTree = "<group>";
@@ -241,11 +253,13 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C75D39551962CF260007B632 /* AULog.h in Headers */,
-				C75D39511962CDAA0007B632 /* AUGithubReleaseChecker.h in Headers */,
+				C75D39511962CDAA0007B632 /* AUGithubReleaseFetcher.h in Headers */,
 				C75D395B196300920007B632 /* AUZipUnarchiver.h in Headers */,
+				C7DD58181963A95C0014311D /* AUUpdateChecker.h in Headers */,
+				C75D39551962CF260007B632 /* AULog.h in Headers */,
 				C75D395D196300CE0007B632 /* AUUnarchiver.h in Headers */,
-				C75D394E1962CAEE0007B632 /* AUAutoUpdater.h in Headers */,
+				C7DD581C1963A99C0014311D /* AUArchiveFetcher.h in Headers */,
+				C75D394E1962CAEE0007B632 /* AUUpdater.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,8 +429,10 @@
 			files = (
 				C75D395C196300920007B632 /* AUZipUnarchiver.m in Sources */,
 				C75D39561962CF260007B632 /* AULog.m in Sources */,
-				C75D39521962CDAA0007B632 /* AUGithubReleaseChecker.m in Sources */,
-				C75D39341962C2660007B632 /* AUAutoUpdater.m in Sources */,
+				C75D39521962CDAA0007B632 /* AUGithubReleaseFetcher.m in Sources */,
+				C7DD581D1963A99C0014311D /* AUArchiveFetcher.m in Sources */,
+				C75D39341962C2660007B632 /* AUUpdater.m in Sources */,
+				C7DD58191963A95C0014311D /* AUUpdateChecker.m in Sources */,
 				C75D395F196306700007B632 /* AUUnarchiver.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -6,15 +6,15 @@
 //  Copyright (c) 2014年 maaash.jp. All rights reserved.
 //
 
-#import "AUAutoUpdater.h"
+#import "AUUpdater.h"
 
-@interface AUAutoUpdater ()
+@interface AUUpdater ()
 
 @property (nonatomic) NSURL *sourcePath;
 
 @end
 
-@implementation AUAutoUpdater
+@implementation AUUpdater
 
 - (instancetype) initWithSourcePath:(NSURL*)source {
     self = [super init];
@@ -30,8 +30,8 @@
     NSString *updaterApp = [NSString pathWithComponents: @[ bundlePath, @"/Contents/Resources/AutoUpdater.app" ]];
     [NSTask launchedTaskWithLaunchPath: updaterApp
                              arguments: @[ [NSBundle mainBundle].bundleIdentifier,
-                                           bundlePath,
-                                           [_sourcePath path] ]];
+                                          bundlePath,
+                                          [_sourcePath path] ]];
 }
 
 @end

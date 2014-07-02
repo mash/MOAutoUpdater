@@ -6,17 +6,18 @@
 //  Copyright (c) 2014年 Masakazu Ohtsuka. All rights reserved.
 //
 
-#import "AUGithubReleaseChecker.h"
+#import "AUGithubReleaseFetcher.h"
 #import <AFNetworking/AFNetworking.h>
 #import "AULog.h"
+#import "AUUpdateChecker.h"
 
 NSString * const AUReleaseCheckerErrorDomain = @"AUReleaseCheckerErrorDomain";
 
-@interface AUGithubReleaseChecker ()
+@interface AUGithubReleaseFetcher ()
 
 @end
 
-@implementation AUGithubReleaseChecker
+@implementation AUGithubReleaseFetcher
 
 - (instancetype) initWithUserName:(NSString*)userName repositoryName:(NSString*)repositoryName {
     self = [super init];
@@ -28,9 +29,9 @@ NSString * const AUReleaseCheckerErrorDomain = @"AUReleaseCheckerErrorDomain";
     return self;
 }
 
-- (void)checkForVersionNewerThanVersion:(NSString*)currentVersion
-                      downloadDirectory:(NSString*)downloadDirectory
-                 foundNewerVersionBlock:(void (^)(NSString *newVersion, NSString *releaseInformation, NSURL *downloadedArchive, NSError *error))completion {
+- (void)fetchArchiveNewerThanVersion:(NSString*)currentVersion
+                   downloadDirectory:(NSString*)downloadDirectory
+            fetchedNewerArchiveBlock:(void (^)(NSDictionary *releaseInformation, NSURL *downloadedArchive, NSError *error))completion {
     AULOG( @"currentVersion: %@", currentVersion );
 
     [self getNewestRelease:^(NSDictionary *release) {
@@ -80,11 +81,16 @@ NSString * const AUReleaseCheckerErrorDomain = @"AUReleaseCheckerErrorDomain";
         NSNumber *assetID        = release[ @"assets" ][ 0 ][ @"id" ];
         NSURL *downloadFileURL   = [NSURL fileURLWithPathComponents: @[downloadDirectory, [NSString stringWithFormat: @"%@", assetID]]];
 
+        NSDictionary *releaseInformation = @{
+            kAUReleaseInformationNewVersionKey: release[@"name"],
+            kAUReleaseInformationBodyTextKey:   release[@"body"],
+        };
+
         // only download and call foundNewerVersionBlock if we found a newer version
-        if (![AUGithubReleaseChecker version: newestVersion isNewerThanVersion: currentVersion]) {
-            completion( nil, nil, nil, [NSError errorWithDomain: AUReleaseCheckerErrorDomain
-                                                           code: AUReleaseCheckerErrorNewerVersionNotFound
-                                                       userInfo: @{ @"newestVersion": newestVersion }]);
+        if (![AUGithubReleaseFetcher version: newestVersion isNewerThanVersion: currentVersion]) {
+            completion( nil, nil, [NSError errorWithDomain: AUReleaseCheckerErrorDomain
+                                                      code: AUReleaseCheckerErrorNewerVersionNotFound
+                                                  userInfo: @{ @"newestVersion": newestVersion }]);
             return;
         }
 
@@ -94,11 +100,7 @@ NSString * const AUReleaseCheckerErrorDomain = @"AUReleaseCheckerErrorDomain";
         NSNumber *expectedSize = release[ @"assets" ][ 0 ][ @"size" ];
         if (fileSize == expectedSize.unsignedLongLongValue) {
             // downloaded
-            [self.unarchiver unarchiveFile: downloadFileURL completion:^(NSURL *unarchivedDirectoryPath, NSError *error) {
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                            completion( release[ @"name" ], release[ @"body" ], unarchivedDirectoryPath, error );
-                        });
-                }];
+            completion( releaseInformation, downloadFileURL, nil );
             return;
         }
 
@@ -109,19 +111,15 @@ NSString * const AUReleaseCheckerErrorDomain = @"AUReleaseCheckerErrorDomain";
                 AULOG( @"filePath: %@, error: %@", filePath, error );
 
                 if (error) {
-                    completion( nil, nil, nil, error );
+                    completion( nil, nil, error );
                     return;
                 }
 
-                [self.unarchiver unarchiveFile: filePath completion:^(NSURL *unarchivedDirectoryPath, NSError *error) {
-                        dispatch_async(dispatch_get_main_queue(), ^{
-                                completion( release[ @"name" ], release[ @"body" ], unarchivedDirectoryPath, error );
-                            });
-                    }];
+                completion( releaseInformation, downloadFileURL, nil );
             }];
     } failure:^(NSError *error) {
         AULOG( @"error: %@", error );
-        completion( nil, nil, nil, error );
+        completion( nil, nil, error );
     }];
 }
 

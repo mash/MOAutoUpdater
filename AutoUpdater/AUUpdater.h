@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface AUAutoUpdater : NSObject
+@interface AUUpdater : NSObject
 
 - (instancetype) initWithSourcePath:(NSURL*)source;
 - (void) run;
