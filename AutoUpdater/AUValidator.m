@@ -8,6 +8,8 @@
 
 #import "AUValidator.h"
 
+NSString * const AUValidatorErrorDomain = @"AUValidatorErrorDomain";
+
 @implementation AUValidator
 
 @end

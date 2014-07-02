@@ -61,9 +61,9 @@ NSString * const kAUReleaseInformationBodyTextKey   = @"body";
 
                 for (int i=0; i<_validators.count; i++) {
                     id<AUValidator> validator = _validators[ i ];
-                    NSError *validationError;
+                    NSError *validationError = nil;
                     if (![validator bundleIsValidAtPath: unarchivedBundlePath.path error: &validationError]) {
-                        completion( nil, nil, error );
+                        completion( nil, nil, validationError );
                         return;
                     }
                 }

@@ -12,7 +12,11 @@
 @implementation AUCodeSignValidator
 
 - (BOOL)bundleIsValidAtPath:(NSString *)destinationPath error:(NSError **)error {
-    return [SUCodeSigningVerifier codeSignatureIsValidAtPath: destinationPath error: error];
+    BOOL ret = [SUCodeSigningVerifier codeSignatureIsValidAtPath: destinationPath error: error];
+    if (!ret && !*error) {
+        *error = [NSError errorWithDomain: AUValidatorErrorDomain code: AUValidatorErrorCodeSignInvalid userInfo: nil];
+    }
+    return ret;
 }
 
 @end

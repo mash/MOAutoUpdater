@@ -8,6 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+extern NSString * const AUValidatorErrorDomain;
+typedef NS_ENUM ( NSInteger, AUValidationErrorKey ) {
+    AUValidatorErrorCodeSignInvalid
+};
+
 @protocol AUValidator <NSObject>
 
 - (BOOL)bundleIsValidAtPath:(NSString *)destinationPath error:(NSError **)error;
