@@ -8,6 +8,7 @@
 
 #import "AUUpdateChecker.h"
 #import "AULog.h"
+#import "AUValidator.h"
 
 NSString * const kAUReleaseInformationNewVersionKey = @"newVersion";
 NSString * const kAUReleaseInformationBodyTextKey   = @"body";
@@ -51,12 +52,25 @@ NSString * const kAUReleaseInformationBodyTextKey   = @"body";
             return;
         }
 
-        [_unarchiver unarchiveFile: downloadedArchive completion:^(NSURL *unarchivedDirectoryPath, NSError *error) {
+        [_unarchiver unarchiveFile: downloadedArchive completion:^(NSURL *unarchivedBundlePath, NSError *error) {
+                AULOG( @"unarchivedBundlePath: %@, error: %@", unarchivedBundlePath, error );
 
-                // TODO validate
+                if (error) {
+                    completion( nil, nil, error );
+                    return;
+                }
+
+                for (int i=0; i<_validators.count; i++) {
+                    id<AUValidator> validator = _validators[ i ];
+                    NSError *validationError;
+                    if (![validator bundleIsValidAtPath: unarchivedBundlePath.path error: &validationError]) {
+                        completion( nil, nil, error );
+                        return;
+                    }
+                }
 
                 dispatch_async(dispatch_get_main_queue(), ^{
-                        completion( releaseInformation, unarchivedDirectoryPath, error );
+                        completion( releaseInformation, unarchivedBundlePath, error );
                     });
             }];
     }];

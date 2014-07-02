@@ -10,9 +10,15 @@
 
 extern NSString * const AUUnarchiverErrorDomain;
 
+// zip command's exit status code is documented to be 0-19
+// Use negative values for our custom errors
+typedef NS_ENUM ( NSInteger, AUUnarchiverErrorKey ) {
+    AUUnarchiverErrorBundleNotFound = -1,
+};
+
 @protocol AUUnarchiver <NSObject>
 
-- (void)unarchiveFile:(NSURL *)filePath completion:(void (^)(NSURL *unarchivedDirectoryPath,NSError* error))completion;
+- (void)unarchiveFile:(NSURL *)filePath completion:(void (^)(NSURL *unarchivedBundlePath,NSError* error))completion;
 
 @end
 

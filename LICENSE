@@ -1,4 +1,4 @@
-Much code of main.m, AUInstaller is copied or inspired by https://github.com/sparkle-project/Sparkle
+Much code of Application/main.m, AUInstaller, SUCodeSigningVerifier is copied or inspired by https://github.com/sparkle-project/Sparkle .
 
 Copyright (c) 2006-2014 Andy Matuschak
 Copyright (c) 2013-2014 Kornel Lesinski

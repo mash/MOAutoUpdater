@@ -34,6 +34,12 @@
 		C7DD58191963A95C0014311D /* AUUpdateChecker.m in Sources */ = {isa = PBXBuildFile; fileRef = C7DD58171963A95C0014311D /* AUUpdateChecker.m */; };
 		C7DD581C1963A99C0014311D /* AUArchiveFetcher.h in Headers */ = {isa = PBXBuildFile; fileRef = C7DD581A1963A99C0014311D /* AUArchiveFetcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C7DD581D1963A99C0014311D /* AUArchiveFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = C7DD581B1963A99C0014311D /* AUArchiveFetcher.m */; };
+		C7DD58211963D5FC0014311D /* AUValidator.h in Headers */ = {isa = PBXBuildFile; fileRef = C7DD581F1963D5FC0014311D /* AUValidator.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C7DD58221963D5FC0014311D /* AUValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = C7DD58201963D5FC0014311D /* AUValidator.m */; };
+		C7DD58251963D6190014311D /* AUCodeSignValidator.h in Headers */ = {isa = PBXBuildFile; fileRef = C7DD58231963D6190014311D /* AUCodeSignValidator.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C7DD58261963D6190014311D /* AUCodeSignValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = C7DD58241963D6190014311D /* AUCodeSignValidator.m */; };
+		C7DD58291963D6280014311D /* SUCodeSigningVerifier.h in Headers */ = {isa = PBXBuildFile; fileRef = C7DD58271963D6280014311D /* SUCodeSigningVerifier.h */; };
+		C7DD582A1963D6280014311D /* SUCodeSigningVerifier.m in Sources */ = {isa = PBXBuildFile; fileRef = C7DD58281963D6280014311D /* SUCodeSigningVerifier.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +89,12 @@
 		C7DD58171963A95C0014311D /* AUUpdateChecker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUUpdateChecker.m; sourceTree = "<group>"; };
 		C7DD581A1963A99C0014311D /* AUArchiveFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUArchiveFetcher.h; sourceTree = "<group>"; };
 		C7DD581B1963A99C0014311D /* AUArchiveFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUArchiveFetcher.m; sourceTree = "<group>"; };
+		C7DD581F1963D5FC0014311D /* AUValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUValidator.h; sourceTree = "<group>"; };
+		C7DD58201963D5FC0014311D /* AUValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUValidator.m; sourceTree = "<group>"; };
+		C7DD58231963D6190014311D /* AUCodeSignValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUCodeSignValidator.h; sourceTree = "<group>"; };
+		C7DD58241963D6190014311D /* AUCodeSignValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUCodeSignValidator.m; sourceTree = "<group>"; };
+		C7DD58271963D6280014311D /* SUCodeSigningVerifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUCodeSigningVerifier.h; sourceTree = "<group>"; };
+		C7DD58281963D6280014311D /* SUCodeSigningVerifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUCodeSigningVerifier.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +134,7 @@
 				C75D39531962CF260007B632 /* AULog.h */,
 				C75D39541962CF260007B632 /* AULog.m */,
 				C75D39311962C2660007B632 /* AutoUpdater-Prefix.pch */,
+				C75D38EE1962A6910007B632 /* LICENSE */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -224,9 +237,10 @@
 			isa = PBXGroup;
 			children = (
 				C75D394D1962C2890007B632 /* Application */,
-				C75D39301962C2660007B632 /* Supporting Files */,
 				C75D396019630C0B0007B632 /* Fetchers */,
 				C75D3957196300350007B632 /* Unarchivers */,
+				C7DD581E1963D5B20014311D /* Validators */,
+				C75D39301962C2660007B632 /* Supporting Files */,
 				C75D39321962C2660007B632 /* AUUpdater.h */,
 				C75D39331962C2660007B632 /* AUUpdater.m */,
 				C7DD58161963A95C0014311D /* AUUpdateChecker.h */,
@@ -241,9 +255,21 @@
 				C772808C196252C300315C42 /* AutoUpdater-Info.plist */,
 				C772808D196252C300315C42 /* InfoPlist.strings */,
 				C7728092196252C300315C42 /* AutoUpdater-Prefix.pch */,
-				C75D38EE1962A6910007B632 /* LICENSE */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C7DD581E1963D5B20014311D /* Validators */ = {
+			isa = PBXGroup;
+			children = (
+				C7DD581F1963D5FC0014311D /* AUValidator.h */,
+				C7DD58201963D5FC0014311D /* AUValidator.m */,
+				C7DD58231963D6190014311D /* AUCodeSignValidator.h */,
+				C7DD58241963D6190014311D /* AUCodeSignValidator.m */,
+				C7DD58271963D6280014311D /* SUCodeSigningVerifier.h */,
+				C7DD58281963D6280014311D /* SUCodeSigningVerifier.m */,
+			);
+			name = Validators;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,7 +283,10 @@
 				C75D395B196300920007B632 /* AUZipUnarchiver.h in Headers */,
 				C7DD58181963A95C0014311D /* AUUpdateChecker.h in Headers */,
 				C75D39551962CF260007B632 /* AULog.h in Headers */,
+				C7DD58291963D6280014311D /* SUCodeSigningVerifier.h in Headers */,
+				C7DD58251963D6190014311D /* AUCodeSignValidator.h in Headers */,
 				C75D395D196300CE0007B632 /* AUUnarchiver.h in Headers */,
+				C7DD58211963D5FC0014311D /* AUValidator.h in Headers */,
 				C7DD581C1963A99C0014311D /* AUArchiveFetcher.h in Headers */,
 				C75D394E1962CAEE0007B632 /* AUUpdater.h in Headers */,
 			);
@@ -427,10 +456,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7DD582A1963D6280014311D /* SUCodeSigningVerifier.m in Sources */,
 				C75D395C196300920007B632 /* AUZipUnarchiver.m in Sources */,
 				C75D39561962CF260007B632 /* AULog.m in Sources */,
 				C75D39521962CDAA0007B632 /* AUGithubReleaseFetcher.m in Sources */,
+				C7DD58261963D6190014311D /* AUCodeSignValidator.m in Sources */,
 				C7DD581D1963A99C0014311D /* AUArchiveFetcher.m in Sources */,
+				C7DD58221963D5FC0014311D /* AUValidator.m in Sources */,
 				C75D39341962C2660007B632 /* AUUpdater.m in Sources */,
 				C7DD58191963A95C0014311D /* AUUpdateChecker.m in Sources */,
 				C75D395F196306700007B632 /* AUUnarchiver.m in Sources */,

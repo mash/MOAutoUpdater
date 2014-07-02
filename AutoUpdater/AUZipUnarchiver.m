@@ -8,9 +8,28 @@
 
 #import "AUZipUnarchiver.h"
 
+@interface AUZipUnarchiver ()
+
+@property (nonatomic) NSString *pathToBundle;
+
+@end
+
 @implementation AUZipUnarchiver
 
-- (void)unarchiveFile:(NSURL *)filePath completion:(void (^)(NSURL *unarchivedDirectoryPath,NSError* error))completion {
+- (instancetype) init {
+    return [self initWithPathToBundle: [NSBundle mainBundle].bundlePath.lastPathComponent];
+}
+
+- (instancetype) initWithPathToBundle: (NSString*) pathToBundle {
+    self = [super init];
+    if (!self) { return nil; }
+
+    _pathToBundle = pathToBundle;
+
+    return self;
+}
+
+- (void)unarchiveFile:(NSURL *)filePath completion:(void (^)(NSURL *unarchivedBundlePath,NSError* error))completion {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         NSURL *destinationDirectory = [AUUnarchiver unarchiveDestinationDirectory];
 
@@ -26,10 +45,18 @@
         int status = [task terminationStatus];
 
         dispatch_async( dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                NSURL *bundlePath = [destinationDirectory URLByAppendingPathComponent: _pathToBundle];
+
+                if (![[NSFileManager defaultManager] fileExistsAtPath: bundlePath.path]) {
+                    completion( nil, [NSError errorWithDomain: AUUnarchiverErrorDomain code: AUUnarchiverErrorBundleNotFound userInfo: nil] );
+                    return;
+                }
+
                 if (status == EXIT_SUCCESS) {
-                    completion( destinationDirectory, nil );
+                    completion( bundlePath, nil );
                 }
                 else {
+                    // zip command's exit status code is documented to be 0-19
                     completion( nil, [NSError errorWithDomain: AUUnarchiverErrorDomain code: status userInfo: nil] );
                 }
             });
