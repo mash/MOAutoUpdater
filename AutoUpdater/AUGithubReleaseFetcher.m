@@ -82,7 +82,7 @@ NSString * const AUReleaseCheckerErrorDomain = @"AUReleaseCheckerErrorDomain";
         NSURL *downloadFileURL   = [downloadDirectory URLByAppendingPathComponent: assetID.stringValue];
 
         NSDictionary *releaseInformation = @{
-            kAUReleaseInformationNewVersionKey: release[@"name"],
+            kAUReleaseInformationNewVersionKey: newestVersion,
             kAUReleaseInformationBodyTextKey:   release[@"body"],
         };
 
@@ -90,7 +90,17 @@ NSString * const AUReleaseCheckerErrorDomain = @"AUReleaseCheckerErrorDomain";
         if (![AUGithubReleaseFetcher version: newestVersion isNewerThanVersion: currentVersion]) {
             completion( nil, nil, [NSError errorWithDomain: AUReleaseCheckerErrorDomain
                                                       code: AUReleaseCheckerErrorNewerVersionNotFound
-                                                  userInfo: @{ @"newestVersion": newestVersion }]);
+                                                  userInfo: @{ kAUReleaseInformationNewVersionKey: newestVersion }]);
+            return;
+        }
+
+        NSError *createDirectoryError;
+        [[NSFileManager defaultManager] createDirectoryAtURL: downloadDirectory
+                                 withIntermediateDirectories: YES
+                                                  attributes: nil
+                                                       error: &createDirectoryError];
+        if (createDirectoryError) {
+            completion( nil, nil, createDirectoryError );
             return;
         }
 
