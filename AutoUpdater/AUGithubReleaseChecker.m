@@ -10,6 +10,8 @@
 #import <AFNetworking/AFNetworking.h>
 #import "AULog.h"
 
+NSString * const AUReleaseCheckerErrorDomain = @"AUReleaseCheckerErrorDomain";
+
 @interface AUGithubReleaseChecker ()
 
 @end
@@ -79,31 +81,47 @@
         NSURL *downloadFileURL   = [NSURL fileURLWithPathComponents: @[downloadDirectory, [NSString stringWithFormat: @"%@", assetID]]];
 
         // only download and call foundNewerVersionBlock if we found a newer version
-        if ([[self class] version: currentVersion isNewerThanVersion: newestVersion]) {
+        if (![AUGithubReleaseChecker version: newestVersion isNewerThanVersion: currentVersion]) {
+            completion( nil, nil, nil, [NSError errorWithDomain: AUReleaseCheckerErrorDomain
+                                                           code: AUReleaseCheckerErrorNewerVersionNotFound
+                                                       userInfo: @{ @"newestVersion": newestVersion }]);
             return;
         }
 
         // only download if not downloaded yet
-        unsigned long long fileSize = [[[NSFileManager defaultManager] attributesOfItemAtPath: [downloadFileURL absoluteString]
+        unsigned long long fileSize = [[[NSFileManager defaultManager] attributesOfItemAtPath: downloadFileURL.path
                                                                                         error: nil] fileSize];
         NSNumber *expectedSize = release[ @"assets" ][ 0 ][ @"size" ];
         if (fileSize == expectedSize.unsignedLongLongValue) {
             // downloaded
-            dispatch_async(dispatch_get_main_queue(), ^{
-                    completion( release[ @"name" ], release[ @"body" ], downloadFileURL, nil );
-                });
+            [self.unarchiver unarchiveFile: downloadFileURL completion:^(NSURL *unarchivedDirectoryPath, NSError *error) {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                            completion( release[ @"name" ], release[ @"body" ], unarchivedDirectoryPath, error );
+                        });
+                }];
             return;
         }
 
+        // remove existing file before downloading
         [[NSFileManager defaultManager] removeItemAtURL: downloadFileURL error: NULL];
+
         [self downloadRelease: release toURL: downloadFileURL completion:^(NSURL *filePath, NSError *error) {
                 AULOG( @"filePath: %@, error: %@", filePath, error );
-                dispatch_async(dispatch_get_main_queue(), ^{
-                        completion( release[ @"name" ], release[ @"body" ], downloadFileURL, error );
-                    });
+
+                if (error) {
+                    completion( nil, nil, nil, error );
+                    return;
+                }
+
+                [self.unarchiver unarchiveFile: filePath completion:^(NSURL *unarchivedDirectoryPath, NSError *error) {
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                                completion( release[ @"name" ], release[ @"body" ], unarchivedDirectoryPath, error );
+                            });
+                    }];
             }];
     } failure:^(NSError *error) {
         AULOG( @"error: %@", error );
+        completion( nil, nil, nil, error );
     }];
 }
 
@@ -136,8 +154,8 @@
     AFURLSessionManager *manager             = [[AFURLSessionManager alloc] initWithSessionConfiguration: configuration];
     NSURLSessionDownloadTask *downloadTask   = [manager downloadTaskWithRequest: request
                                                                        progress: nil
-                                                                    destination:^NSURL *(NSURL *targetPath, NSURLResponse *response) {
-        // AULOG( @"targetPath: %@, response: %@ -> targetPath: %@", targetPath, response, targetPath );
+                                                                    destination:^NSURL *(NSURL *tmpPath, NSURLResponse *response) {
+        AULOG( @"targetPath: %@, response: %@ -> tmpPath: %@", targetPath, response, tmpPath );
         return targetPath;
     } completionHandler:^(NSURLResponse *response, NSURL *filePath, NSError *error) {
         AULOG( @"response: %@, filePath: %@, error: %@", response, filePath, error );
@@ -150,21 +168,25 @@
 
 #pragma mark - Private
 
-+ (BOOL) version:(NSString*) version isNewerThanVersion: (NSString*)fetchedVersion {
-    AULOG( @"version: %@ fetchedVersion: %@", version, fetchedVersion);
++ (BOOL) version:(NSString*) version1_ isNewerThanVersion: (NSString*)version2_ {
+    AULOG( @"version1: %@ version2: %@", version1_, version2_);
 
-    NSArray *versionParts        = [version componentsSeparatedByString: @"."];
-    NSArray *fetchedVersionParts = [fetchedVersion componentsSeparatedByString: @"."];
-    if (versionParts[0] > fetchedVersionParts[0]) {
+    NSString *version1 = [version1_ stringByReplacingOccurrencesOfString: @"v" withString: @""];
+    NSString *version2 = [version2_ stringByReplacingOccurrencesOfString: @"v" withString: @""];
+
+    NSArray *version1Parts = [version1 componentsSeparatedByString: @"."];
+    NSArray *version2Parts = [version2 componentsSeparatedByString: @"."];
+
+    if (version1Parts[0] > version2Parts[0]) {
         return YES; // new major version
     }
-    if ((versionParts[0] == fetchedVersionParts[0]) &&
-        (versionParts[1] > fetchedVersionParts[1])) {
+    if ((version1Parts[0] == version2Parts[0]) &&
+        (version1Parts[1] > version2Parts[1])) {
         return YES; // new minor version
     }
-    if ((versionParts[0] == fetchedVersionParts[0]) &&
-        (versionParts[1] == fetchedVersionParts[1]) &&
-        (versionParts[2] == fetchedVersionParts[2])) {
+    if ((version1Parts[0] == version2Parts[0]) &&
+        (version1Parts[1] == version2Parts[1]) &&
+        (version1Parts[2] > version2Parts[2])) {
         return YES; // new bugfix version
     }
     return NO;
