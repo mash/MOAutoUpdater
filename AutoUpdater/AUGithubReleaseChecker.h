@@ -7,12 +7,19 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "AUUnarchiver.h"
+
+extern NSString * const AUReleaseCheckerErrorDomain;
+typedef NS_ENUM ( NSInteger, AUReleaseCheckerError ) {
+    AUReleaseCheckerErrorNewerVersionNotFound
+};
 
 /// Check github release for a new update
 @interface AUGithubReleaseChecker : NSObject
 
 @property (nonatomic, copy) NSString *userName;
 @property (nonatomic, copy) NSString *repositoryName;
+@property (nonatomic) id<AUUnarchiver> unarchiver;
 
 - (instancetype) initWithUserName:(NSString*)userName repositoryName:(NSString*)repositoryName;
 

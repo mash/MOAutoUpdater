@@ -21,6 +21,10 @@
 		C75D39521962CDAA0007B632 /* AUGithubReleaseChecker.m in Sources */ = {isa = PBXBuildFile; fileRef = C75D39501962CDAA0007B632 /* AUGithubReleaseChecker.m */; };
 		C75D39551962CF260007B632 /* AULog.h in Headers */ = {isa = PBXBuildFile; fileRef = C75D39531962CF260007B632 /* AULog.h */; };
 		C75D39561962CF260007B632 /* AULog.m in Sources */ = {isa = PBXBuildFile; fileRef = C75D39541962CF260007B632 /* AULog.m */; };
+		C75D395B196300920007B632 /* AUZipUnarchiver.h in Headers */ = {isa = PBXBuildFile; fileRef = C75D3959196300920007B632 /* AUZipUnarchiver.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C75D395C196300920007B632 /* AUZipUnarchiver.m in Sources */ = {isa = PBXBuildFile; fileRef = C75D395A196300920007B632 /* AUZipUnarchiver.m */; };
+		C75D395D196300CE0007B632 /* AUUnarchiver.h in Headers */ = {isa = PBXBuildFile; fileRef = C75D39581963004B0007B632 /* AUUnarchiver.h */; };
+		C75D395F196306700007B632 /* AUUnarchiver.m in Sources */ = {isa = PBXBuildFile; fileRef = C75D395E196306700007B632 /* AUUnarchiver.m */; };
 		C7728085196252C300315C42 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7728084196252C300315C42 /* Cocoa.framework */; };
 		C772808F196252C300315C42 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C772808D196252C300315C42 /* InfoPlist.strings */; };
 		C7728091196252C300315C42 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C7728090196252C300315C42 /* main.m */; };
@@ -54,6 +58,10 @@
 		C75D39501962CDAA0007B632 /* AUGithubReleaseChecker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUGithubReleaseChecker.m; sourceTree = "<group>"; };
 		C75D39531962CF260007B632 /* AULog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AULog.h; sourceTree = "<group>"; };
 		C75D39541962CF260007B632 /* AULog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AULog.m; sourceTree = "<group>"; };
+		C75D39581963004B0007B632 /* AUUnarchiver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AUUnarchiver.h; sourceTree = "<group>"; };
+		C75D3959196300920007B632 /* AUZipUnarchiver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUZipUnarchiver.h; sourceTree = "<group>"; };
+		C75D395A196300920007B632 /* AUZipUnarchiver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUZipUnarchiver.m; sourceTree = "<group>"; };
+		C75D395E196306700007B632 /* AUUnarchiver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUUnarchiver.m; sourceTree = "<group>"; };
 		C7728081196252C300315C42 /* AutoUpdater.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoUpdater.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7728084196252C300315C42 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		C7728087196252C300315C42 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -103,6 +111,8 @@
 		C75D39301962C2660007B632 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C75D39531962CF260007B632 /* AULog.h */,
+				C75D39541962CF260007B632 /* AULog.m */,
 				C75D39311962C2660007B632 /* AutoUpdater-Prefix.pch */,
 			);
 			name = "Supporting Files";
@@ -137,6 +147,26 @@
 				C772808B196252C300315C42 /* Supporting Files */,
 			);
 			name = Application;
+			sourceTree = "<group>";
+		};
+		C75D3957196300350007B632 /* Unarchivers */ = {
+			isa = PBXGroup;
+			children = (
+				C75D39581963004B0007B632 /* AUUnarchiver.h */,
+				C75D395E196306700007B632 /* AUUnarchiver.m */,
+				C75D3959196300920007B632 /* AUZipUnarchiver.h */,
+				C75D395A196300920007B632 /* AUZipUnarchiver.m */,
+			);
+			name = Unarchivers;
+			sourceTree = "<group>";
+		};
+		C75D396019630C0B0007B632 /* VersionCheckers */ = {
+			isa = PBXGroup;
+			children = (
+				C75D394F1962CDAA0007B632 /* AUGithubReleaseChecker.h */,
+				C75D39501962CDAA0007B632 /* AUGithubReleaseChecker.m */,
+			);
+			name = VersionCheckers;
 			sourceTree = "<group>";
 		};
 		C7728078196252C300315C42 = {
@@ -183,14 +213,12 @@
 		C772808A196252C300315C42 /* AutoUpdater */ = {
 			isa = PBXGroup;
 			children = (
-				C75D39531962CF260007B632 /* AULog.h */,
-				C75D39541962CF260007B632 /* AULog.m */,
-				C75D394F1962CDAA0007B632 /* AUGithubReleaseChecker.h */,
-				C75D39501962CDAA0007B632 /* AUGithubReleaseChecker.m */,
+				C75D394D1962C2890007B632 /* Application */,
+				C75D39301962C2660007B632 /* Supporting Files */,
+				C75D396019630C0B0007B632 /* VersionCheckers */,
+				C75D3957196300350007B632 /* Unarchivers */,
 				C75D39321962C2660007B632 /* AUAutoUpdater.h */,
 				C75D39331962C2660007B632 /* AUAutoUpdater.m */,
-				C75D39301962C2660007B632 /* Supporting Files */,
-				C75D394D1962C2890007B632 /* Application */,
 			);
 			path = AutoUpdater;
 			sourceTree = "<group>";
@@ -215,6 +243,8 @@
 			files = (
 				C75D39551962CF260007B632 /* AULog.h in Headers */,
 				C75D39511962CDAA0007B632 /* AUGithubReleaseChecker.h in Headers */,
+				C75D395B196300920007B632 /* AUZipUnarchiver.h in Headers */,
+				C75D395D196300CE0007B632 /* AUUnarchiver.h in Headers */,
 				C75D394E1962CAEE0007B632 /* AUAutoUpdater.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -383,9 +413,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C75D395C196300920007B632 /* AUZipUnarchiver.m in Sources */,
 				C75D39561962CF260007B632 /* AULog.m in Sources */,
 				C75D39521962CDAA0007B632 /* AUGithubReleaseChecker.m in Sources */,
 				C75D39341962C2660007B632 /* AUAutoUpdater.m in Sources */,
+				C75D395F196306700007B632 /* AUUnarchiver.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
