@@ -63,8 +63,13 @@ int main(int argc, const char * argv[]){
                     // should we wait for a while to confirm that app is really successfully launched?
 
                     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-                            // TODO handle remove error
-                            [[NSFileManager defaultManager] removeItemAtPath: source error: NULL];
+                            NSError *error = nil;
+                            [[NSFileManager defaultManager] removeItemAtPath: source error: &error];
+                            if (error) {
+                                NSString *message = [NSString stringWithFormat: @"Failed to remove %@", source];
+                                NSLog( @"%@", message );
+                                // failed but is successful update
+                            }
                             dispatch_async(dispatch_get_main_queue(), ^{
                                     NSLog( @"%@ updater successfully finished!", appname );
                                     exit(EXIT_SUCCESS);
