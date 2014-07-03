@@ -8,6 +8,16 @@
 
 #import "AUUpdater.h"
 
+NSString * const kAUUpdaterArgumentsBundlePath        = @"bundlePath";
+NSString * const kAUUpdaterArgumentsBundleIdentifier  = @"bundleIdentifier";
+NSString * const kAUUpdaterArgumentsSource            = @"source";
+NSString * const kAUUpdaterArgumentsRelaunchArguments = @"arguments";
+
+NSString * const kAUReleaseInformationUpdatedFlagKey = @"au.updated";
+NSString * const kAUReleaseInformationNewVersionKey  = @"au.newVersion";
+NSString * const kAUReleaseInformationBodyTextKey    = @"au.body";
+NSString * const kAUReleaseInformationURLKey         = @"au.url";
+
 @interface AUUpdater ()
 
 @property (nonatomic) NSURL *sourcePath;
@@ -25,13 +35,31 @@
     return self;
 }
 
-- (void) run {
-    NSString *bundlePath = [NSBundle mainBundle].bundlePath;
-    NSString *updaterApp = [NSString pathWithComponents: @[ bundlePath, @"/Contents/Resources/AutoUpdater.app" ]];
+- (void) runWithArgumentsForRelaunchedApplication:(NSDictionary*)relaunchArguments_ {
+
+    NSBundle *bundle                       = [NSBundle mainBundle];
+    NSString *updaterApp                   = [NSString pathWithComponents: @[ bundle.bundlePath, @"/Contents/Resources/AutoUpdater.app" ]];
+    NSMutableDictionary *relaunchArguments = [NSMutableDictionary dictionaryWithDictionary: relaunchArguments_];
+    relaunchArguments[ kAUReleaseInformationUpdatedFlagKey ] = @YES;
+    NSDictionary *plistArg = @{
+        kAUUpdaterArgumentsBundlePath        : bundle.bundlePath,
+        kAUUpdaterArgumentsBundleIdentifier  : bundle.bundleIdentifier,
+        kAUUpdaterArgumentsSource            : _sourcePath.path,
+        kAUUpdaterArgumentsRelaunchArguments : relaunchArguments, // passed over to host application
+    };
     [NSTask launchedTaskWithLaunchPath: updaterApp
-                             arguments: @[ [NSBundle mainBundle].bundleIdentifier,
-                                          bundlePath,
-                                          [_sourcePath path] ]];
+                             arguments: @[ @"-plistArg", plistArg.description ]];
+}
+
+#pragma mark - Class methods
+
++ (BOOL) didRelaunch {
+    NSDictionary *relaunchArguments = [[NSUserDefaults standardUserDefaults] volatileDomainForName: NSArgumentDomain];
+    return ((NSNumber*)relaunchArguments[ kAUReleaseInformationUpdatedFlagKey ]).boolValue;
+}
+
++ (NSDictionary*) releaseInformation {
+    return [[NSUserDefaults standardUserDefaults] volatileDomainForName: NSArgumentDomain];
 }
 
 @end

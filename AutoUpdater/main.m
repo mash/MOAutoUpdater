@@ -9,24 +9,23 @@
 #import <Cocoa/Cocoa.h>
 #import "AUTerminationObserver.h"
 #import "AUInstaller.h"
+#import "AUUpdater.h"
 
 void showModalAlertWithMessage(NSString *message);
 
-/// How to call:
-/// NSString *relaunchToolPath = [[relaunchPath stringByAppendingPathComponent: @"/Contents/MacOS"] stringByAppendingPathComponent: finishInstallToolName];
-/// [NSTask launchedTaskWithLaunchPath: relaunchToolPath arguments:@[[host bundleIdentifier],
-///                                                                  [host bundlePath],
-///                                                                  tempDir]];
+/// Use AUUpdater class to run
 int main(int argc, const char * argv[]){
     if (argc <= 4) {
         return EXIT_FAILURE;
     }
 
     @autoreleasepool {
-        NSString *bundleIdentifier = [NSString stringWithCString: argv[1] encoding: NSUTF8StringEncoding];
-        NSString *destination      = [NSString stringWithCString: argv[2] encoding: NSUTF8StringEncoding];
-        NSString *source           = [NSString stringWithCString: argv[3] encoding: NSUTF8StringEncoding];
-        NSString *appname          = [destination lastPathComponent];
+        NSDictionary *arguments     = [[NSUserDefaults standardUserDefaults] volatileDomainForName: NSArgumentDomain];
+        NSString *bundleIdentifier  = arguments[ kAUUpdaterArgumentsBundleIdentifier ];
+        NSString *destination       = arguments[ kAUUpdaterArgumentsBundlePath ];
+        NSString *source            = arguments[ kAUUpdaterArgumentsSource ];
+        NSString *relaunchArguments = arguments[ kAUUpdaterArgumentsRelaunchArguments ];
+        NSString *appname           = [destination lastPathComponent];
 
         NSLog( @"%@ updater is updating destination: %@ from source: %@ and relaunching: %@", appname, destination, source, bundleIdentifier );
 
@@ -49,7 +48,7 @@ int main(int argc, const char * argv[]){
                         exit(EXIT_FAILURE);
                     }
                     NSError *launchError = nil;
-                    NSArray *arguments = @[ @"--autoupdated" ];
+                    NSArray *arguments = @[ @"-plistArg", relaunchArguments.description ];
                     NSRunningApplication *app = [[NSWorkspace sharedWorkspace] launchApplicationAtURL: [NSURL fileURLWithPath: destination]
                                                                                               options: NSWorkspaceLaunchDefault
                                                                                         configuration: @{ NSWorkspaceLaunchConfigurationArguments: arguments }
@@ -64,6 +63,7 @@ int main(int argc, const char * argv[]){
                     // should we wait for a while to confirm that app is really successfully launched?
 
                     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                            // TODO handle remove error
                             [[NSFileManager defaultManager] removeItemAtPath: source error: NULL];
                             dispatch_async(dispatch_get_main_queue(), ^{
                                     NSLog( @"%@ updater successfully finished!", appname );

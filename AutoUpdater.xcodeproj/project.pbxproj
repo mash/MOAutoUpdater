@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4D24CE881A254B3AA40326FD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC16B4057084455AF54C4A5 /* libPods.a */; };
+		C73F2D0D1965027B00B9AC53 /* AUUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = C75D39331962C2660007B632 /* AUUpdater.m */; };
 		C75D38EF1962A6910007B632 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = C75D38EE1962A6910007B632 /* LICENSE */; };
 		C75D392E1962C2660007B632 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7728084196252C300315C42 /* Cocoa.framework */; };
 		C75D39341962C2660007B632 /* AUUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = C75D39331962C2660007B632 /* AUUpdater.m */; };
@@ -481,6 +482,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C73F2D0D1965027B00B9AC53 /* AUUpdater.m in Sources */,
 				C77280BA1962555B00315C42 /* AUTerminationObserver.m in Sources */,
 				C77280BD196262B000315C42 /* AUInstaller.m in Sources */,
 				C7728091196252C300315C42 /* main.m in Sources */,

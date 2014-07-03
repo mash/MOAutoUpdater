@@ -10,9 +10,6 @@
 #import "AULog.h"
 #import "AUValidator.h"
 
-NSString * const kAUReleaseInformationNewVersionKey = @"newVersion";
-NSString * const kAUReleaseInformationBodyTextKey   = @"body";
-
 @interface AUUpdateChecker ()
 
 @property (nonatomic) id<AUArchiveFetcher> fetcher;

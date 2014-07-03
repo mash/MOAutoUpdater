@@ -10,9 +10,6 @@
 #import "AUArchiveFetcher.h"
 #import "AUUnarchiver.h"
 
-extern NSString * const kAUReleaseInformationNewVersionKey;
-extern NSString * const kAUReleaseInformationBodyTextKey;
-
 @interface AUUpdateChecker : NSObject
 
 @property (nonatomic) NSURL *cacheDirectory;

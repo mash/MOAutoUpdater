@@ -10,6 +10,7 @@
 #import <AFNetworking/AFNetworking.h>
 #import "AULog.h"
 #import "AUUpdateChecker.h"
+#import "AUUpdater.h" // for kAUReleaseInformation keys
 
 NSString * const AUReleaseCheckerErrorDomain = @"AUReleaseCheckerErrorDomain";
 
@@ -84,6 +85,7 @@ NSString * const AUReleaseCheckerErrorDomain = @"AUReleaseCheckerErrorDomain";
         NSDictionary *releaseInformation = @{
             kAUReleaseInformationNewVersionKey: newestVersion,
             kAUReleaseInformationBodyTextKey:   release[@"body"],
+            kAUReleaseInformationURLKey:        release[@"html_url"],
         };
 
         // only download and call foundNewerVersionBlock if we found a newer version
