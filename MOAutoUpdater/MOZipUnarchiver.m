@@ -44,22 +44,20 @@
         [task waitUntilExit];
         int status = [task terminationStatus];
 
-        dispatch_async( dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-                NSURL *bundlePath = [destinationDirectory URLByAppendingPathComponent: _pathToBundle];
+        NSURL *bundlePath = [destinationDirectory URLByAppendingPathComponent: _pathToBundle];
 
-                if (![[NSFileManager defaultManager] fileExistsAtPath: bundlePath.path]) {
-                    completion( nil, [NSError errorWithDomain: MOUnarchiverErrorDomain code: MOUnarchiverErrorBundleNotFound userInfo: nil] );
-                    return;
-                }
+        if (![[NSFileManager defaultManager] fileExistsAtPath: bundlePath.path]) {
+            completion( nil, [NSError errorWithDomain: MOUnarchiverErrorDomain code: MOUnarchiverErrorBundleNotFound userInfo: nil] );
+            return;
+        }
 
-                if (status == EXIT_SUCCESS) {
-                    completion( bundlePath, nil );
-                }
-                else {
-                    // zip command's exit status code is documented to be 0-19
-                    completion( nil, [NSError errorWithDomain: MOUnarchiverErrorDomain code: status userInfo: nil] );
-                }
-            });
+        if (status == EXIT_SUCCESS) {
+            completion( bundlePath, nil );
+        }
+        else {
+            // zip command's exit status code is documented to be 0-19
+            completion( nil, [NSError errorWithDomain: MOUnarchiverErrorDomain code: status userInfo: nil] );
+        }
     });
 }
 

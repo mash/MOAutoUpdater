@@ -18,6 +18,7 @@ typedef NS_ENUM ( NSInteger, MOUnarchiverErrorKey ) {
 
 @protocol MOUnarchiver <NSObject>
 
+/// completion run in non main thread
 - (void)unarchiveFile:(NSURL *)filePath completion:(void (^)(NSURL *unarchivedBundlePath,NSError* error))completion;
 
 @end
