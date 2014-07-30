@@ -15,7 +15,9 @@ void showModalAlertWithMessage(NSString *message);
 
 /// Use MOUpdater class to run
 int main(int argc, const char * argv[]){
-    if (argc <= 4) {
+    if (argc <= 2) {
+        // we need at least 3:
+        // Updater -plistArg ...
         return EXIT_FAILURE;
     }
 
