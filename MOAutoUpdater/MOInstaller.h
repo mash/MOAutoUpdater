@@ -12,6 +12,8 @@
 
 - (instancetype) initWithDestinationPath:(NSString*)destinationPath
                               sourcePath:(NSString*)sourcePath;
+
+// completion called in main thread
 - (void) installWithCompletion: (void (^)(NSError *error))completion;
 
 @end

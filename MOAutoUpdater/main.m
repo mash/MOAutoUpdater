@@ -35,7 +35,7 @@ int main(int argc, const char * argv[]){
         observer.timeout = 10.;
         [observer observeTerminationOfBundleIdentifier: bundleIdentifier completion:^(NSError* error) {
             if (error) {
-                NSString *message = [NSString stringWithFormat: @"Failed to terminate %@", appname];
+                NSString *message = [NSString stringWithFormat: @"Failed to terminate %@, error: %@", appname, error];
                 NSLog( @"%@", message );
                 showModalAlertWithMessage(message);
                 exit(EXIT_FAILURE);
@@ -56,7 +56,7 @@ int main(int argc, const char * argv[]){
                                                                                         configuration: @{ NSWorkspaceLaunchConfigurationArguments: arguments }
                                                                                                 error: &launchError];
                     if (!app || launchError) {
-                        NSString *message = [NSString stringWithFormat: @"Failed to relaunch %@", appname];
+                        NSString *message = [NSString stringWithFormat: @"Failed to relaunch %@, error: %@", appname, launchError];
                         NSLog( @"%@", message );
                         showModalAlertWithMessage(message);
                         exit(EXIT_FAILURE);
