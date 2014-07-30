@@ -58,7 +58,7 @@ NSString * const kMOReleaseInformationURLKey         = @"au.url";
 }
 
 + (NSDictionary*) releaseInformation {
-    return [[NSUserDefaults standardUserDefaults] volatileDomainForName: NSArgumentDomain];
+    return [[[NSUserDefaults standardUserDefaults] volatileDomainForName: NSArgumentDomain] objectForKey: @"plistArg"];
 }
 
 @end
