@@ -36,9 +36,8 @@ NSString * const kMOReleaseInformationURLKey         = @"au.url";
 }
 
 - (void) runWithArgumentsForRelaunchedApplication:(NSDictionary*)relaunchArguments_ {
-
     NSBundle *bundle                       = [NSBundle mainBundle];
-    NSString *updaterApp                   = [NSString pathWithComponents: @[ bundle.bundlePath, @"/Contents/Resources/AutoUpdater.app" ]];
+    NSString *updaterApp                   = [[NSBundle bundleWithPath: [bundle pathForResource: @"Updater" ofType: @"app"]] executablePath];
     NSMutableDictionary *relaunchArguments = [NSMutableDictionary dictionaryWithDictionary: relaunchArguments_];
     relaunchArguments[ kMOReleaseInformationUpdatedFlagKey ] = @YES;
     NSDictionary *plistArg = @{
