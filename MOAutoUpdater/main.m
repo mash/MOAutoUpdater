@@ -22,7 +22,8 @@ int main(int argc, const char * argv[]){
     }
 
     @autoreleasepool {
-        NSDictionary *arguments     = [[NSUserDefaults standardUserDefaults] volatileDomainForName: NSArgumentDomain];
+        NSDictionary *arguments = [[[NSUserDefaults standardUserDefaults] volatileDomainForName: NSArgumentDomain] objectForKey: @"plistArg"];
+
         NSString *bundleIdentifier  = arguments[ kMOUpdaterArgumentsBundleIdentifier ];
         NSString *destination       = arguments[ kMOUpdaterArgumentsBundlePath ];
         NSString *source            = arguments[ kMOUpdaterArgumentsSource ];

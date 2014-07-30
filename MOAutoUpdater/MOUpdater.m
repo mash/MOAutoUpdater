@@ -53,7 +53,7 @@ NSString * const kMOReleaseInformationURLKey         = @"au.url";
 #pragma mark - Class methods
 
 + (BOOL) didRelaunch {
-    NSDictionary *relaunchArguments = [[NSUserDefaults standardUserDefaults] volatileDomainForName: NSArgumentDomain];
+    NSDictionary *relaunchArguments = [[[NSUserDefaults standardUserDefaults] volatileDomainForName: NSArgumentDomain] objectForKey: @"plistArg"];
     return ((NSNumber*)relaunchArguments[ kMOReleaseInformationUpdatedFlagKey ]).boolValue;
 }
 
