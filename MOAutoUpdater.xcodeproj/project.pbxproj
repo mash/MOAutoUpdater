@@ -55,7 +55,8 @@
 
 /* Begin PBXFileReference section */
 		5DC16B4057084455AF54C4A5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		76DE2237E09D44ABB3011E82 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		664C4CBCFB8AB06C0CCBBE21 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		A6AB3E783F8A6BF7B3E724D3 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		C75D38EE1962A6910007B632 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
 		C75D392D1962C2660007B632 /* MOAutoUpdater.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = MOAutoUpdater.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		C75D39311962C2660007B632 /* MOAutoUpdater-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MOAutoUpdater-Prefix.pch"; sourceTree = "<group>"; };
@@ -129,6 +130,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C39B63FE5DBD652F0C3B3B2D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				664C4CBCFB8AB06C0CCBBE21 /* Pods.debug.xcconfig */,
+				A6AB3E783F8A6BF7B3E724D3 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		C75D39301962C2660007B632 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -200,7 +210,7 @@
 				C75D393F1962C2660007B632 /* MOAutoUpdaterTests */,
 				C7728083196252C300315C42 /* Frameworks */,
 				C7728082196252C300315C42 /* Products */,
-				76DE2237E09D44ABB3011E82 /* Pods.xcconfig */,
+				C39B63FE5DBD652F0C3B3B2D /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -447,7 +457,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -521,7 +531,7 @@
 /* Begin XCBuildConfiguration section */
 		C75D39481962C2670007B632 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 76DE2237E09D44ABB3011E82 /* Pods.xcconfig */;
+			baseConfigurationReference = 664C4CBCFB8AB06C0CCBBE21 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -538,7 +548,7 @@
 		};
 		C75D39491962C2670007B632 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 76DE2237E09D44ABB3011E82 /* Pods.xcconfig */;
+			baseConfigurationReference = A6AB3E783F8A6BF7B3E724D3 /* Pods.release.xcconfig */;
 			buildSettings = {
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -663,7 +673,6 @@
 		};
 		C77280B3196252C300315C42 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 76DE2237E09D44ABB3011E82 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -677,7 +686,6 @@
 		};
 		C77280B4196252C300315C42 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 76DE2237E09D44ABB3011E82 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;

@@ -11,6 +11,7 @@
 #import "MOLog.h"
 #import "MOUpdateChecker.h"
 #import "MOUpdater.h" // for kMOReleaseInformation keys
+#import "EDSemver.h"
 
 NSString * const MOReleaseCheckerErrorDomain = @"MOReleaseCheckerErrorDomain";
 
@@ -180,26 +181,7 @@ NSString * const MOReleaseCheckerErrorDomain = @"MOReleaseCheckerErrorDomain";
 
 + (BOOL) version:(NSString*) version1_ isNewerThanVersion: (NSString*)version2_ {
     MOLOG( @"version1: %@ version2: %@", version1_, version2_);
-
-    NSString *version1 = [version1_ stringByReplacingOccurrencesOfString: @"v" withString: @""];
-    NSString *version2 = [version2_ stringByReplacingOccurrencesOfString: @"v" withString: @""];
-
-    NSArray *version1Parts = [version1 componentsSeparatedByString: @"."];
-    NSArray *version2Parts = [version2 componentsSeparatedByString: @"."];
-
-    if (version1Parts[0] > version2Parts[0]) {
-        return YES; // new major version
-    }
-    if ((version1Parts[0] == version2Parts[0]) &&
-        (version1Parts[1] > version2Parts[1])) {
-        return YES; // new minor version
-    }
-    if ((version1Parts[0] == version2Parts[0]) &&
-        (version1Parts[1] == version2Parts[1]) &&
-        (version1Parts[2] > version2Parts[2])) {
-        return YES; // new bugfix version
-    }
-    return NO;
+    return [[EDSemver semverWithString:version1_] isGreaterThan:[EDSemver semverWithString:version2_]];
 }
 
 @end
